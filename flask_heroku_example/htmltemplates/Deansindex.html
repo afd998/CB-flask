@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('#test').bind('click', function() {
+            $.getJSON('/update',
+                function(data) {
+              $('#test').text(data.keke)
+            });
+            return false;
+          });
+        });
+</script>
+ <form>
+            <button id="test" class='btn btn-default'>Test</button>
+        </form>
+<body>
+<center>
+    <input type="button" value="Click me">
+<style>
+body{background-color: #d6d6d6;}
+body {margin:50;}
+</style>
+<h1 style="color:black;">Community Bridges Statistics</h1>
+<h4>
+Hello
+</h4>
+</center>
+
+</body>
+</html>
