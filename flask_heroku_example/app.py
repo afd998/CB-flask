@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, g
-import test
 from flask import Flask, render_template, jsonify, request, session, redirect
 import warnings, csv
 
@@ -12,7 +11,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 
 @app.route('/')
 def index():
-    
+
 
     return render_template('index.html')
 
