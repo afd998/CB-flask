@@ -152,9 +152,3 @@ def Get_Category_Indicies(user_category_list, organizations):
     for categories in user_category_list:
         user_category_indicies.append(Organization_Selected(categories, organizations))
     return user_category_indicies
-
-
-
-if __name__ == '__main__':
-
-app.run(debug=True)
