@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,9 +15,120 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-</head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script></head>
+
+
+<!--
+<script type=text/javascript>
+        $(function() {
+          $('#test').bind('click', function() {
+            $.getJSON('/update',
+                function(data) {
+              $('#test').text(data.keke)
+            });
+            return false;
+          });
+        });
+</script>
+-->
 
 <body class="bg-gradient-primary">
+
+
+
+
+<input type="text" id="textBox1" value = "La Manzana Community Resources|Live Oak Community Resources">
+
+<input type="text" id="textBox2" value = "">
+
+<input type="text" id="textBox3" value = "Multi-racial">
+
+<input type="text" id="textBox4" value = "Female">
+
+<input type="text" id="textBox5" value = "">
+
+<input type="text" id="textBox6" value = "Monterey County">
+
+<input type="text" id="textBox7" value = "Below 100%">
+
+
+<div id="finalResult"></div>
+
+<button id="submitButton">Submit</button>
+
+<script type="text/javascript">
+  function returnChecked(name){
+				var items=document.getElementsByName(name);
+				var selectedItems="";
+				for(var i=0; i<items.length; i++){
+					if(items[i].type=='checkbox' && items[i].checked==true)
+					    if(i+1 === items.length){
+					      selectedItems+=items[i].value;
+                        }else{
+					      selectedItems+=items[i].value+"|";
+                        }
+				}
+				return selectedItems;
+  }
+  $(document).ready(function(){
+  var dataList = [];
+  $("#test").click(function(){
+  //dataList[0] = $("#test").attr("name")
+  //returnChecked("check1");
+  dataList[0] = document.getElementById("textBox1").value;
+  dataList[1] = returnChecked("check1");
+  dataList[2] = document.getElementById("textBox3").value;
+  dataList[3] = document.getElementById("textBox4").value;
+  dataList[4] = document.getElementById("textBox5").value;
+  dataList[5] = document.getElementById("textBox6").value;
+  dataList[6] = document.getElementById("textBox7").value;
+  /*
+  $.ajax({
+    type : 'POST',
+    //FIXME url
+    url : "http://127.0.0.1:5000/calculate",
+    //contentType: 'application/json;charset=UTF-8',
+    data : {'data':dataList}
+});
+*/
+  $.post("/calculate", {x: dataList}, function(data) {$('#submitButton').text(data)});
+  /*
+  $.get("/update", function (data) {
+      $('#submitButton').text(data.keke)
+  })
+  */
+  /*$.getJSON('/update',
+                function(data) {
+              console.log("hi");
+              console.log(data.keke);
+              $('#submitButton').text(data.keke)
+            });
+   */
+ });
+});
+</script>
+<!--
+<script type=text/javascript>
+        $(function() {
+          $('#submitButton').bind('click', function() {
+            $.getJSON('/update',
+                function(data) {
+              $('#submitButton').text(data.keke)
+            });
+            return false;
+          });
+        });
+</script>
+-->
+
+
+
+
+
+   <button id="test" class="btn btn-default" name="test123">Test</button>
+
+
+
 
   <div class="container">
 
@@ -39,6 +147,41 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
+                  Age:
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value = "0-5" name = "check1">
+                    <span class="form-check-sign"></span>
+                    0-5
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value = "6-18" name = "check1">
+                    <span class="form-check-sign"></span>
+                    6-18
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value = "19-59" name = "check1">
+                    <span class="form-check-sign"></span>
+                    19-59
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"  value = "60 and Over" name = "check1">
+                    <span class="form-check-sign"></span>
+                    60-over
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"  value = "Unknown" name = "check1">
+                    <span class="form-check-sign"></span>
+                    Unknown
+                  </label>
                   <form class="user" action="/login" method="post">
 
 
@@ -67,6 +210,6 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-</body>
 
-</html>
+
+</body></html>
