@@ -18,119 +18,14 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script></head>
 
 
-<!--
-<script type=text/javascript>
-        $(function() {
-          $('#test').bind('click', function() {
-            $.getJSON('/update',
-                function(data) {
-              $('#test').text(data.keke)
-            });
-            return false;
-          });
-        });
-</script>
--->
 
-<body class="bg-gradient-primary">
+
+<body class="bg-gradient-primary" style="background-color:#E6E6FA">
 
 
 
 
-<input type="text" id="textBox1" value = "La Manzana Community Resources|Live Oak Community Resources">
-
-<input type="text" id="textBox2" value = "">
-
-<input type="text" id="textBox3" value = "Multi-racial">
-
-<input type="text" id="textBox4" value = "Female">
-
-<input type="text" id="textBox5" value = "">
-
-<input type="text" id="textBox6" value = "Monterey County">
-
-<input type="text" id="textBox7" value = "Below 100%">
-
-
-<div id="finalResult"></div>
-
-<button id="submitButton">Submit</button>
-
-<script type="text/javascript">
-  function returnChecked(name){
-				var items=document.getElementsByName(name);
-				var selectedItems="";
-				for(var i=0; i<items.length; i++){
-					if(items[i].type=='checkbox' && items[i].checked==true)
-					    if(i+1 === items.length){
-					      selectedItems+=items[i].value;
-                        }else{
-					      selectedItems+=items[i].value+"|";
-                        }
-				}
-				return selectedItems;
-  }
-  $(document).ready(function(){
-  var dataList = [];
-  $("#test").click(function(){
-  //dataList[0] = $("#test").attr("name")
-  //returnChecked("check1");
-  dataList[0] = document.getElementById("textBox1").value;
-  dataList[1] = returnChecked("check1");
-  dataList[2] = document.getElementById("textBox3").value;
-  dataList[3] = document.getElementById("textBox4").value;
-  dataList[4] = document.getElementById("textBox5").value;
-  dataList[5] = document.getElementById("textBox6").value;
-  dataList[6] = document.getElementById("textBox7").value;
-  /*
-  $.ajax({
-    type : 'POST',
-    //FIXME url
-    url : "http://127.0.0.1:5000/calculate",
-    //contentType: 'application/json;charset=UTF-8',
-    data : {'data':dataList}
-});
-*/
-  $.post("/calculate", {x: dataList}, function(data) {$('#submitButton').text(data)});
-  /*
-  $.get("/update", function (data) {
-      $('#submitButton').text(data.keke)
-  })
-  */
-  /*$.getJSON('/update',
-                function(data) {
-              console.log("hi");
-              console.log(data.keke);
-              $('#submitButton').text(data.keke)
-            });
-   */
- });
-});
-</script>
-<!--
-<script type=text/javascript>
-        $(function() {
-          $('#submitButton').bind('click', function() {
-            $.getJSON('/update',
-                function(data) {
-              $('#submitButton').text(data.keke)
-            });
-            return false;
-          });
-        });
-</script>
--->
-
-
-
-
-
-   <button id="test" class="btn btn-default" name="test123">Test</button>
-
-
-
-
-  <div class="container">
+<div class="container">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -145,49 +40,13 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Welcome to the Community Bridges Statistics Site</h1>
                   </div>
-                  Age:
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value = "0-5" name = "check1">
                     <span class="form-check-sign"></span>
-                    0-5
                   </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value = "6-18" name = "check1">
-                    <span class="form-check-sign"></span>
-                    6-18
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value = "19-59" name = "check1">
-                    <span class="form-check-sign"></span>
-                    19-59
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"  value = "60 and Over" name = "check1">
-                    <span class="form-check-sign"></span>
-                    60-over
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"  value = "Unknown" name = "check1">
-                    <span class="form-check-sign"></span>
-                    Unknown
-                  </label>
-                  <form class="user" action="/login" method="post">
 
-
-                      <a href="/logout">LOGOUT</a>
-
-                  </form>
                 </div>
               </div>
             </div>
@@ -199,6 +58,249 @@
     </div>
 
   </div>
+  </div>
+
+
+<!--
+<input type="text" id="textBox1" value = "">
+
+<input type="text" id="textBox2" value = "">
+
+<input type="text" id="textBox3" value = "">
+
+<input type="text" id="textBox4" value = "">
+
+<input type="text" id="textBox5" value = "">
+
+<input type="text" id="textBox6" value = "">
+
+<input type="text" id="textBox7" value = "">
+-->
+
+
+<!--
+<input type="file" name="data_file" id ="the_data_file"/>
+
+<button id="fileUpload">Upload</button>
+
+<div id="finalResult"></div>
+
+<button id="submitButton">Submit</button>
+-->
+
+
+<table style="width: 90%;text-align: left;" > <!-- border="5px solid" -->
+  <thead>
+    <tr>
+      <th><u>Age</u></th>
+      <th><u>Programs</u></th>
+      <th><u>Ethnicity</u></th>
+      <th><u>Gender</u></th>
+      <th><u>Language</u></th>
+      <th><u>Area</u></th>
+      <th><u>Income</u></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr align="justify" >
+      <td>
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="age" value = "0-5">
+            <span class="form-check-sign"></span>
+            0-5
+          </label>
+          <br />
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="age" value= "6-18">
+            <span class="form-check-sign"></span>
+            6-18
+          </label>
+          <br />
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="age" value="19-59">
+            <span class="form-check-sign"></span>
+            19-59
+          </label>
+          <br />
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="age" value="60 and Over">
+            <span class="form-check-sign"></span>
+            60-over
+          </label>
+          <br />
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="age" value="Unknown">
+            <span class="form-check-sign"></span>
+            Unknown
+          </label>
+          <br />
+      </td>
+      <td>
+        <a class="small" data-value="La Manzana Community Resources" ><input type="checkbox" value = "La Manzana Community Resources"name ="programs"/>&nbsp;La Manzana Community Resources</a>
+        <br />
+        <a class="small" data-value="Nueva Vista Community Resources" ><input type="checkbox" value = "Nueva Vista Community Resources"name ="programs"/>&nbsp;Nueva Vista Community Resources</a>
+        <br />
+        <a class="small" data-value="Live Oak Community Resources" ><input type="checkbox" value = "Live Oak Community Resources"name ="programs"/>&nbsp;Live Oak Community Resources</a>
+        <br />
+        <a class="small" data-value="Mountain Community Resources" ><input type="checkbox" value = "Mountain Community Resources"name ="programs"/>&nbsp;Mountain Community Resources</a>
+      </td>
+      <td>
+        <a class="small" data-value="Multi-racial" ><input type="checkbox" name ="ethnicity" value = "Multi-racial|multi-racial"/>&nbsp;Multi-racial</a>
+        <br />
+        <a class="small" data-value="Asian" ><input type="checkbox" name ="ethnicity" value = "Asian"/>&nbsp;Asian</a>
+        <br />
+        <a class="small" data-value="American Indian or Alaska Native" ><input type="checkbox" name ="ethnicity"value = "American Indian or Alaska Native"/>&nbsp;American Indian or Alaska Native</a>
+        <br />
+        <a class="small" data-value="White" ><input type="checkbox" name ="ethnicity"value = "White"/>&nbsp;White</a>
+        <br />
+        <a class="small" data-value="Latino" ><input type="checkbox"name ="ethnicity" value = "Latino"/>&nbsp;Latino</a>
+        <br />
+        <a class="small" data-value="Black or African American" ><input type="checkbox"name ="ethnicity" value = "Black or African American"/>&nbsp;Black or African American</a></li>
+        <br />
+        <a class="small" data-value="Native Hawaiian or Other Pacific Islander" ><input type="checkbox" name ="ethnicity"value = "Native Hawaiian or Other Pacific Islander"/>&nbsp;Native Hawaiian or Other Pacific Islander</a></li>
+        <br />
+        <a class="small" data-value="other" ><input type="checkbox"name ="ethnicity" value = "Other"/>&nbsp;Other</a>
+      </td>
+      <td>
+        <!-- Gender -->
+        <a class="small" data-value="Male" ><input type="checkbox" name ="gender" value = "Male"/>&nbsp;Male</a>
+        <br />
+        <a class="small" data-value="Female" ><input type="checkbox" name ="gender" value = "Female"/>&nbsp;Female </a>
+        <br />
+        <a class="small" data-value="Other" ><input type="checkbox" name ="gender"value = "Other"/>&nbsp;Other</a>
+      </td>
+      <td>
+        <!-- Language -->
+        <a class="small" data-value="Spanish" ><input type="checkbox" name ="language" value = "Spanish"/>&nbsp;Spanish</a>
+        <br />
+        <a class="small" data-value="English" ><input type="checkbox" name ="language" value = "English"/>&nbsp;English </a>
+        <br />
+        <a class="small" data-value="Other" ><input type="checkbox" name ="language"value = "Other"/>&nbsp;Other</a>
+      </td>
+      <td>
+        <!-- Area -->
+        <a class="small" data-value="Monterey County" ><input type="checkbox" name ="area" value = "Monterey County"/>&nbsp;Monterey County</a>
+        <br />
+        <a class="small" data-value="Watsonville" ><input type="checkbox" name ="area" value = "Watsonville"/>&nbsp;Watsonville </a>
+        <br />
+        <a class="small" data-value="Santa Cruz" ><input type="checkbox" name ="area"value = "Santa Cruz |Santa Cruz|Santa Cruz County"/>&nbsp;Santa Cruz County</a>
+        <br />
+        <a class="small" data-value="South County" ><input type="checkbox" name ="area" value = "South County"/>&nbsp;South County</a>
+        <br />
+          <!--
+          not sure if santa cruz county is the same as santa cruz
+        <a class="small" data-value="Santa Cruz County" ><input type="checkbox" name ="area" value = "Santa Cruz County"/>&nbsp;Santa Cruz County </a>
+        <br />
+        -->
+        <a class="small" data-value="Mid-County" ><input type="checkbox" name ="area"value = "Mid-County"/>&nbsp;Mid-County</a>
+        <br />
+        <a class="small" data-value="San Benito County" ><input type="checkbox" name ="area"value = "San Benito County"/>&nbsp;San Benito County</a>
+        <br />
+        <a class="small" data-value="San Lorenzo Valley" ><input type="checkbox" name ="area" value = "San Lorenzo Valley"/>&nbsp;San Lorenzo Valley </a>
+        <br />
+        <a class="small" data-value="Capitola" ><input type="checkbox" name ="area"value = "Capitola"/>&nbsp;Capitola</a>
+        <br />
+        <a class="small" data-value="Scotts Valley" ><input type="checkbox" name ="area"value = "Scotts Valley"/>&nbsp;Scotts Valley</a>
+        <br />
+        <a class="small" data-value="Other" ><input type="checkbox" name ="area"value = "Other"/>&nbsp;Other</a>
+      </td>
+      <td>
+        <!-- Income -->
+        <a class="small" data-value="Below 100%" ><input type="checkbox" name ="income" value = "Below 100%"/>&nbsp;Below 100%</a>
+        <br />
+        <a class="small" data-value="100%-200%" ><input type="checkbox" name ="income" value = "100-200%|100%-200%"/>&nbsp;100%-200% </a>
+        <br />
+      <!--  <a class="small" data-value="100-200%" ><input type="checkbox" name ="income" value = "100-200%"/>&nbsp;100-200% </a>
+        <br /> -->
+        <a class="small" data-value="Above 200%" ><input type="checkbox" name ="income"value = "Above 200%"/>&nbsp;Above 200%</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+
+
+
+
+  function returnChecked(name){
+				var items=document.getElementsByName(name);
+				var selectedItems="";
+				for(var i=0; i<items.length; i++){
+					if(items[i].type=='checkbox' && items[i].checked==true)
+
+					    if(i+1 === items.length){
+					      selectedItems+=items[i].value;
+                        }else{
+					      selectedItems+=items[i].value+"|";
+                        }
+
+				}
+				return selectedItems;
+  }
+
+  $(document).ready(function(){
+  var dataList = [];
+  $("#calculate_button").click(function(){
+
+    //Record ID,Family Resource Center,Age,Race / Ethnicity,Gender,Primary Language,Geography,Poverty Level
+      //data list skips record id starts with family resource center
+    dataList[0] = returnChecked("programs");
+    dataList[1] = returnChecked("age");
+    dataList[2] = returnChecked("ethnicity");
+    dataList[3] = returnChecked("gender");
+    dataList[4] = returnChecked("language");
+    dataList[5] = returnChecked("area");
+    dataList[6] = returnChecked("income");
+
+    var totalString = "";
+
+    for(var i = 0; i<dataList.length; i++){
+      totalString += dataList[i]+", ";
+    }
+
+
+
+  $.post("/calculate", {x: dataList}, function(data) {$('#the_answer').text("There are "+data+" people that meet this criteria.")
+  $('#the_answer_info').text("Categories Chosen: " + totalString)
+  });
+
+ });
+
+  //https://stackoverflow.com/questions/18334717/how-to-upload-a-file-using-an-ajax-call-in-flask
+  $('#upload-file-btn').click(function() {
+        var form_data = new FormData($('#upload-file')[0]);
+        $.ajax({
+            type: 'POST',
+            url: '/upload',
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(data) {
+                console.log('Success!');
+            },
+        });
+    });
+  });
+
+</script>
+
+
+
+
+
+
+   <button id="calculate_button" class="btn btn-default" style="width:200px;height:50px;" >Calculate</button>
+
+
+
+
+
+
+<h2 class="h4 text-gray-900 mb-4" id = "the_answer"></h2>
+
+<h6 class="h4 text-gray-900 mb-4" id = "the_answer_info"></h6>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -210,6 +312,42 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
+<form class="user" action="/login" method="post">
 
+
+                      <a href="/logout">LOGOUT</a>
+
+                  </form>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div>
+    <h1 style="color:red">
+
+    Danger Zone
+    </h1>
+    <h4>
+        Upload a new csv file to update the calculations. Please read README.txt file for important information on file upload.
+    </h4>
+
+<form id="upload-file" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <input name="file" type="file">
+    </fieldset>
+    <fieldset>
+        <button id="upload-file-btn" type="button">Upload</button>
+    </fieldset>
+</form>
+
+</div>
 
 </body></html>

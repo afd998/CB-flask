@@ -18,11 +18,14 @@ def hello():
 def about():
     return "<h1>About page</h1>"
 
+
+"""
 @app.route("/update",methods= ['GET'])
 def update():
 
     final_string = str(main())
     return jsonify(keke=final_string)
+"""
 
 @app.route("/calculate",methods= ['POST'])
 def calculate():
@@ -30,12 +33,31 @@ def calculate():
     items = request.form.getlist("x[]")
     print(items)
 
+
     the_list_of_items = []
     the_list_of_items.append("")
     the_list_of_items.extend(items) # so that the id requirement gets fufilled.
     print(the_list_of_items)
 
     return jsonify(str(main(the_list_of_items)))#THIS ALREADY RETURNS MAIN!!! JUST PUT ARGS IN!
+
+@app.route("/upload",methods=['POST'])
+def upload():
+
+    items = request.files['file'].read()
+
+
+    file = open("raw.csv","wb")
+
+    file.write(items)
+
+    file.close()
+
+
+    print(items)
+
+    return jsonify(str("hi"))
+
 
 @app.route("/login", methods= ['POST'])
 def login():
