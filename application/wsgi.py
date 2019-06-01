@@ -1,6 +1,6 @@
 from whitenoise import WhiteNoise
 
-import app
+from app import app
 
 application = WhiteNoise(app)
 application.add_files('static/', prefix='static/')
