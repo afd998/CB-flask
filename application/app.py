@@ -7,6 +7,7 @@ import warnings, csv
 
 
 app = Flask(__name__, template_folder="htmltemplates")
+
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 
 @app.route("/")
