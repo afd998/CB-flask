@@ -5,9 +5,9 @@ import warnings, csv
 
 
 
+
 app = Flask(__name__, template_folder="htmltemplates")
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
-
 
 @app.route("/")
 def hello():
@@ -72,7 +72,7 @@ def login():
 
 
 @app.route("/dashboard", methods= ['GET'])
-def dshboard():
+def dashboard():
     if 'username' in session:
         return render_template('dashboard.html')
     else:

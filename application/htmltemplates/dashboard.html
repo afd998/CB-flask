@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Community Bridges- Login</title>
+  <title>Community Bridges- Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -14,340 +16,272 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script></head>
-
-
-
-
-<body class="bg-gradient-primary" style="background-color:#E6E6FA">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
+  <!-- Maybe someone in the future can get the css working
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/sb-admin-2.min.css') }}">
+  -->
+</head>
 
 
-<div class="container">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
+    <!-- Main Content -->
+    <div id="content">
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome to the Community Bridges Statistics Site</h1>
-                  </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <span class="form-check-sign"></span>
-                  </label>
-
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800"> Dashboard </h1>
+          <form class="user" action="/login" method="post"> 
+            <a href="/logout"> <h5> LOGOUT </h5></a>
+          </form>
         </div>
 
-      </div>
+        <div class="card">
+          <div class="card-header">
+            <h3> Categories: </h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <table style="width: 95%;text-align: left; margin-top:10px; margin-left:10px;"> 
+                  <thead>
+                    <tr>
+                      <th><u><font color="black"><h4>Age</h4></font></u></th>
+                      <th><u><font color="black"><h4>Programs</h4></font></u></th>
+                      <th><u><font color="black"><h4>Ethnicity</h4></font></u></th>
+                      <th><u><font color="black"><h4>Gender</h4></font></u></th>
+                      <th><u><font color="black"><h4>Language</h4></font></u></th>
+                      <th><u><font color="black"><h4>Area</h4></font></u></th>
+                      <th><u><font color="black"><h4>Income</h4></font></u></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr >
+                      <td width="x%">
+                        <a class="small" data-value="0-5" ><input type="checkbox" value = "0-5"name ="age"/>&nbsp;<font color="black">0-5</font></a>
+                        <br />
+                        <a class="small" data-value="6-18" ><input type="checkbox" value = "6-18"name ="age"/>&nbsp;<font color="black"> 6-18</font> </a>
+                        <br />
+                        <a class="small" data-value="19-59" ><input type="checkbox" value = "19-59"name ="age"/>&nbsp;<font color="black"> 19-59</font> </a>
+                        <br />
+                        <a class="small" data-value="60-over" ><input type="checkbox" value = "60-over"name ="age"/>&nbsp;<font color="black"> 60-over</font> </a>
+                        <br />
+                        <a class="small" data-value="Unknown" ><input type="checkbox" value = "Unknown"name ="age"/>&nbsp;<font color="Unknown"> Unknown</font> </a>
+                        <br />
+                      </td>
+                      <td width="x%">
+                        <a class="small" data-value="La Manzana Community Resources" ><input type="checkbox" value = "La Manzana Community Resources"name ="programs"/>&nbsp;<font color="black"> La Manzana Community Resources</font> </a>
+                        <br />
+                        <a class="small" data-value="Nueva Vista Community Resources" ><input type="checkbox" value = "Nueva Vista Community Resources"name ="programs"/>&nbsp;<font color="black"> Nueva Vista Community Resources</font></a>
+                        <br />
+                        <a class="small" data-value="Live Oak Community Resources" ><input type="checkbox" value = "Live Oak Community Resources"name ="programs"/>&nbsp;<font color="black"> Live Oak Community Resources</a>
+                        <br />
+                        <a class="small" data-value="Mountain Community Resources" ><input type="checkbox" value = "Mountain Community Resources"name ="programs"/>&nbsp;<font color="black"> Mountain Community Resources</a>
+                      </td>
+                        <td width="x%">
+                        <a class="small" data-value="Multi-racial" ><input type="checkbox" name ="ethnicity" value = "Multi-racial|multi-racial"/>&nbsp;<font color="black"> Multi-racial</font></a>
+                        <br />
+                        <a class="small" data-value="Asian" ><input type="checkbox" name ="ethnicity" value = "Asian"/>&nbsp;<font color="black"> Asian</font></a>
+                        <br />
+                        <a class="small" data-value="American Indian or Alaska Native" ><input type="checkbox" name ="ethnicity"value = "American Indian or Alaska Native"/>&nbsp;<font color="black"> American Indian or Alaska Native</font></a>
+                        <br />
+                        <a class="small" data-value="White" ><input type="checkbox" name ="ethnicity"value = "White"/>&nbsp;<font color="black"> White</font></a>
+                        <br />
+                        <a class="small" data-value="Latino" ><input type="checkbox"name ="ethnicity" value = "Latino"/>&nbsp;<font color="black"> Latino</font></a>
+                        <br />
+                        <a class="small" data-value="Black or African American" ><input type="checkbox"name ="ethnicity" value = "Black or African American"/>&nbsp;<font color="black"> Black or African American</font></a></li>
+                        <br />
+                        <a class="small" data-value="Native Hawaiian or Other Pacific Islander" ><input type="checkbox" name ="ethnicity"value = "Native Hawaiian or Other Pacific Islander"/>&nbsp; <font color="black"> Native Hawaiian or Other Pacific Islander</font></a></li>
+                        <br />
+                        <a class="small" data-value="other" ><input type="checkbox"name ="ethnicity" value = "Other"/>&nbsp;<font color="black"> Other</font></a>
+                      </td>
+                        <td width="x%">
+                           <!-- Gender -->
+                          <a class="small" data-value="Male" ><input type="checkbox" name ="gender" value = "Male"/>&nbsp;<font color="black"> Male</font></a>
+                          <br />
+                          <a class="small" data-value="Female" ><input type="checkbox" name ="gender" value = "Female"/>&nbsp;<font color="black"> Female</font></a>
+                          <br />
+                          <a class="small" data-value="Other" ><input type="checkbox" name ="gender"value = "Other"/>&nbsp;<font color="black"> Other</font></a>
+                        </td>
+                        <td width="x%">
+                          <!-- Language -->
+                          <a class="small" data-value="Spanish" ><input type="checkbox" name ="language" value = "Spanish"/>&nbsp;<font color="black"> Spanish</font></a>
+                          <br />
+                          <a class="small" data-value="English" ><input type="checkbox" name ="language" value = "English"/>&nbsp;<font color="black"> English</font></a>
+                          <br />
+                          <a class="small" data-value="Other" ><input type="checkbox" name ="language"value = "Other"/>&nbsp;<font color="black"> Other</font></a>
+                        </td>
+                      <td width="x%">
+                            <!-- Area -->
+                            <a class="small" data-value="Monterey County" ><input type="checkbox" name ="area" value = "Monterey County"/>&nbsp;<font color="black"> Monterey County</font></a>
+                            <br />
+                            <a class="small" data-value="Watsonville" ><input type="checkbox" name ="area" value = "Watsonville"/>&nbsp;<font color="black"> Watsonville</font></a>
+                            <br />
+                            <a class="small" data-value="Santa Cruz" ><input type="checkbox" name ="area"value = "Santa Cruz |Santa Cruz|Santa Cruz County"/>&nbsp;<font color="black"> Santa Cruz County</font></a>
+                            <br />
+                            <a class="small" data-value="South County" ><input type="checkbox" name ="area" value = "South County"/>&nbsp;<font color="black"> South County</font></a>
+                            <br />
+                            <a class="small" data-value="Mid-County" ><input type="checkbox" name ="area"value = "Mid-County"/>&nbsp;<font color="black"> Mid-County</font></a>
+                            <br />
+                            <a class="small" data-value="San Benito County" ><input type="checkbox" name ="area"value = "San Benito County"/>&nbsp;<font color="black"> San Benito County</font></a>
+                            <br />
+                            <a class="small" data-value="San Lorenzo Valley" ><input type="checkbox" name ="area" value = "San Lorenzo Valley"/>&nbsp;<font color="black"> San Lorenzo Valley</font></a>
+                            <br />
+                            <a class="small" data-value="Capitola" ><input type="checkbox" name ="area"value = "Capitola"/>&nbsp;<font color="black"> Capitola</font></a>
+                            <br />
+                            <a class="small" data-value="Scotts Valley" ><input type="checkbox" name ="area"value = "Scotts Valley"/>&nbsp;<font color="black"> Scotts Valley</font></a>
+                            <br />
+                            <a class="small" data-value="Other" ><input type="checkbox" name ="area"value = "Other"/>&nbsp;<font color="black"> Other</font></a>
+                          </td>
+                          <td width="x%">
+                            <!-- Income -->
+                            <a class="small" data-value="Below 100%" ><input type="checkbox" name ="income" value = "Below 100%"/>&nbsp;<font color="black"> Below 100%</font></a>
+                            <br />
+                            <a class="small" data-value="100%-200%" ><input type="checkbox" name ="income" value = "100-200%|100%-200%"/>&nbsp;<font color="black"> 100%-200%</font></a>
+                            <br />
+                <!--  <a class="small" data-value="100-200%" ><input type="checkbox" name ="income" value = "100-200%"/>&nbsp;100-200% </a>
+                  <br /> -->
+                  <a class="small" data-value="Above 200%" ><input type="checkbox" name ="income"value = "Above 200%"/>&nbsp;<font color="black"> Above 200%</font></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+            </li>
+          </ul>
+        </div>
 
-    </div>
-
+<br />
+  <button id="calculate_button" class="btn btn-default" style="width:200px;height:50px;text-align: center;line-height: 20px;font-size:20px">
+    Calculate</button>
+<br />
+<br />
+<center>
+  <div class="panel panel-default">
+  <div class="panel-body">
+    <h2 class="h4 text-gray-900 mb-4" id = "the_answer"></h2>
+    <h6 class="h4 text-gray-900 mb-4" id = "the_answer_info"></h6>
   </div>
   </div>
+</center>
 
 
-<!--
-<input type="text" id="textBox1" value = "">
+<br />
+<br />
+<div class="card">
+  <div class="card-header" style="color: #AD310A">
+    <h2>
+    Danger: Uploading CSV file
+    </h2>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <h4>
+      Upload a new csv file to update the calculations. Please refer to the README.txt file for important information on file upload.
+    </h4>
+      <form id="upload-file" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <input name="file" type="file">
+          <button id="upload-file-btn" type="button">Upload</button>
+        </fieldset>
+      </form>
+    </li>
+  </ul>
+</div>
 
-<input type="text" id="textBox2" value = "">
+  <!-- /.container-fluid -->
 
-<input type="text" id="textBox3" value = "">
+</div>
+</div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<input type="text" id="textBox4" value = "">
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<input type="text" id="textBox5" value = "">
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 
-<input type="text" id="textBox6" value = "">
+<!-- Page level custom scripts -->
+<script src="js/inhouse.js"></script>
 
-<input type="text" id="textBox7" value = "">
--->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
+  <script type="text/javascript">
 
-<!--
-<input type="file" name="data_file" id ="the_data_file"/>
+    function returnChecked(name){
+      var items=document.getElementsByName(name);
+      var selectedItems="";
+      for(var i=0; i<items.length; i++){
+       if(items[i].type=='checkbox' && items[i].checked==true)
 
-<button id="fileUpload">Upload</button>
+         if(i+1 === items.length){
+           selectedItems+=items[i].value;
+         }else{
+           selectedItems+=items[i].value+"|";
+         }
 
-<div id="finalResult"></div>
+       }
+       return selectedItems;
+     }
 
-<button id="submitButton">Submit</button>
--->
-
-
-<table style="width: 90%;text-align: left;" > <!-- border="5px solid" -->
-  <thead>
-    <tr>
-      <th><u>Age</u></th>
-      <th><u>Programs</u></th>
-      <th><u>Ethnicity</u></th>
-      <th><u>Gender</u></th>
-      <th><u>Language</u></th>
-      <th><u>Area</u></th>
-      <th><u>Income</u></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr align="justify" >
-      <td>
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="age" value = "0-5">
-            <span class="form-check-sign"></span>
-            0-5
-          </label>
-          <br />
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="age" value= "6-18">
-            <span class="form-check-sign"></span>
-            6-18
-          </label>
-          <br />
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="age" value="19-59">
-            <span class="form-check-sign"></span>
-            19-59
-          </label>
-          <br />
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="age" value="60 and Over">
-            <span class="form-check-sign"></span>
-            60-over
-          </label>
-          <br />
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="age" value="Unknown">
-            <span class="form-check-sign"></span>
-            Unknown
-          </label>
-          <br />
-      </td>
-      <td>
-        <a class="small" data-value="La Manzana Community Resources" ><input type="checkbox" value = "La Manzana Community Resources"name ="programs"/>&nbsp;La Manzana Community Resources</a>
-        <br />
-        <a class="small" data-value="Nueva Vista Community Resources" ><input type="checkbox" value = "Nueva Vista Community Resources"name ="programs"/>&nbsp;Nueva Vista Community Resources</a>
-        <br />
-        <a class="small" data-value="Live Oak Community Resources" ><input type="checkbox" value = "Live Oak Community Resources"name ="programs"/>&nbsp;Live Oak Community Resources</a>
-        <br />
-        <a class="small" data-value="Mountain Community Resources" ><input type="checkbox" value = "Mountain Community Resources"name ="programs"/>&nbsp;Mountain Community Resources</a>
-      </td>
-      <td>
-        <a class="small" data-value="Multi-racial" ><input type="checkbox" name ="ethnicity" value = "Multi-racial|multi-racial"/>&nbsp;Multi-racial</a>
-        <br />
-        <a class="small" data-value="Asian" ><input type="checkbox" name ="ethnicity" value = "Asian"/>&nbsp;Asian</a>
-        <br />
-        <a class="small" data-value="American Indian or Alaska Native" ><input type="checkbox" name ="ethnicity"value = "American Indian or Alaska Native"/>&nbsp;American Indian or Alaska Native</a>
-        <br />
-        <a class="small" data-value="White" ><input type="checkbox" name ="ethnicity"value = "White"/>&nbsp;White</a>
-        <br />
-        <a class="small" data-value="Latino" ><input type="checkbox"name ="ethnicity" value = "Latino"/>&nbsp;Latino</a>
-        <br />
-        <a class="small" data-value="Black or African American" ><input type="checkbox"name ="ethnicity" value = "Black or African American"/>&nbsp;Black or African American</a></li>
-        <br />
-        <a class="small" data-value="Native Hawaiian or Other Pacific Islander" ><input type="checkbox" name ="ethnicity"value = "Native Hawaiian or Other Pacific Islander"/>&nbsp;Native Hawaiian or Other Pacific Islander</a></li>
-        <br />
-        <a class="small" data-value="other" ><input type="checkbox"name ="ethnicity" value = "Other"/>&nbsp;Other</a>
-      </td>
-      <td>
-        <!-- Gender -->
-        <a class="small" data-value="Male" ><input type="checkbox" name ="gender" value = "Male"/>&nbsp;Male</a>
-        <br />
-        <a class="small" data-value="Female" ><input type="checkbox" name ="gender" value = "Female"/>&nbsp;Female </a>
-        <br />
-        <a class="small" data-value="Other" ><input type="checkbox" name ="gender"value = "Other"/>&nbsp;Other</a>
-      </td>
-      <td>
-        <!-- Language -->
-        <a class="small" data-value="Spanish" ><input type="checkbox" name ="language" value = "Spanish"/>&nbsp;Spanish</a>
-        <br />
-        <a class="small" data-value="English" ><input type="checkbox" name ="language" value = "English"/>&nbsp;English </a>
-        <br />
-        <a class="small" data-value="Other" ><input type="checkbox" name ="language"value = "Other"/>&nbsp;Other</a>
-      </td>
-      <td>
-        <!-- Area -->
-        <a class="small" data-value="Monterey County" ><input type="checkbox" name ="area" value = "Monterey County"/>&nbsp;Monterey County</a>
-        <br />
-        <a class="small" data-value="Watsonville" ><input type="checkbox" name ="area" value = "Watsonville"/>&nbsp;Watsonville </a>
-        <br />
-        <a class="small" data-value="Santa Cruz" ><input type="checkbox" name ="area"value = "Santa Cruz |Santa Cruz|Santa Cruz County"/>&nbsp;Santa Cruz County</a>
-        <br />
-        <a class="small" data-value="South County" ><input type="checkbox" name ="area" value = "South County"/>&nbsp;South County</a>
-        <br />
-          <!--
-          not sure if santa cruz county is the same as santa cruz
-        <a class="small" data-value="Santa Cruz County" ><input type="checkbox" name ="area" value = "Santa Cruz County"/>&nbsp;Santa Cruz County </a>
-        <br />
-        -->
-        <a class="small" data-value="Mid-County" ><input type="checkbox" name ="area"value = "Mid-County"/>&nbsp;Mid-County</a>
-        <br />
-        <a class="small" data-value="San Benito County" ><input type="checkbox" name ="area"value = "San Benito County"/>&nbsp;San Benito County</a>
-        <br />
-        <a class="small" data-value="San Lorenzo Valley" ><input type="checkbox" name ="area" value = "San Lorenzo Valley"/>&nbsp;San Lorenzo Valley </a>
-        <br />
-        <a class="small" data-value="Capitola" ><input type="checkbox" name ="area"value = "Capitola"/>&nbsp;Capitola</a>
-        <br />
-        <a class="small" data-value="Scotts Valley" ><input type="checkbox" name ="area"value = "Scotts Valley"/>&nbsp;Scotts Valley</a>
-        <br />
-        <a class="small" data-value="Other" ><input type="checkbox" name ="area"value = "Other"/>&nbsp;Other</a>
-      </td>
-      <td>
-        <!-- Income -->
-        <a class="small" data-value="Below 100%" ><input type="checkbox" name ="income" value = "Below 100%"/>&nbsp;Below 100%</a>
-        <br />
-        <a class="small" data-value="100%-200%" ><input type="checkbox" name ="income" value = "100-200%|100%-200%"/>&nbsp;100%-200% </a>
-        <br />
-      <!--  <a class="small" data-value="100-200%" ><input type="checkbox" name ="income" value = "100-200%"/>&nbsp;100-200% </a>
-        <br /> -->
-        <a class="small" data-value="Above 200%" ><input type="checkbox" name ="income"value = "Above 200%"/>&nbsp;Above 200%</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<script type="text/javascript">
-
-
-
-
-  function returnChecked(name){
-				var items=document.getElementsByName(name);
-				var selectedItems="";
-				for(var i=0; i<items.length; i++){
-					if(items[i].type=='checkbox' && items[i].checked==true)
-
-					    if(i+1 === items.length){
-					      selectedItems+=items[i].value;
-                        }else{
-					      selectedItems+=items[i].value+"|";
-                        }
-
-				}
-				return selectedItems;
-  }
-
-  $(document).ready(function(){
-  var dataList = [];
-  $("#calculate_button").click(function(){
+     $(document).ready(function(){
+      var dataList = [];
+      $("#calculate_button").click(function(){
 
     //Record ID,Family Resource Center,Age,Race / Ethnicity,Gender,Primary Language,Geography,Poverty Level
       //data list skips record id starts with family resource center
-    dataList[0] = returnChecked("programs");
-    dataList[1] = returnChecked("age");
-    dataList[2] = returnChecked("ethnicity");
-    dataList[3] = returnChecked("gender");
-    dataList[4] = returnChecked("language");
-    dataList[5] = returnChecked("area");
-    dataList[6] = returnChecked("income");
+      dataList[0] = returnChecked("programs");
+      dataList[1] = returnChecked("age");
+      dataList[2] = returnChecked("ethnicity");
+      dataList[3] = returnChecked("gender");
+      dataList[4] = returnChecked("language");
+      dataList[5] = returnChecked("area");
+      dataList[6] = returnChecked("income");
 
-    var totalString = "";
+      var totalString = "";
 
-    for(var i = 0; i<dataList.length; i++){
-      totalString += dataList[i]+", ";
-    }
+      for(var i = 0; i<dataList.length; i++){
+        totalString += dataList[i]+", ";
+      }
 
 
 
-  $.post("/calculate", {x: dataList}, function(data) {$('#the_answer').text("There are "+data+" people that meet this criteria.")
-  $('#the_answer_info').text("Categories Chosen: " + totalString)
-  });
+      $.post("/calculate", {x: dataList}, function(data) {$('#the_answer').text("There are "+data+" people that meet this criteria.")
+        $('#the_answer_info').text("Categories Chosen: " + totalString)
+      });
 
- });
+    });
 
   //https://stackoverflow.com/questions/18334717/how-to-upload-a-file-using-an-ajax-call-in-flask
   $('#upload-file-btn').click(function() {
-        var form_data = new FormData($('#upload-file')[0]);
-        $.ajax({
-            type: 'POST',
-            url: '/upload',
-            data: form_data,
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function(data) {
-                console.log('Success!');
-            },
-        });
+    var form_data = new FormData($('#upload-file')[0]);
+    $.ajax({
+      type: 'POST',
+      url: '/upload',
+      data: form_data,
+      contentType: false,
+      cache: false,
+      processData: false,
+      success: function(data) {
+        console.log('Success!');
+      },
     });
   });
+});
 
 </script>
-
-
-
-
-
-
-   <button id="calculate_button" class="btn btn-default" style="width:200px;height:50px;" >Calculate</button>
-
-
-
-
-
-
-<h2 class="h4 text-gray-900 mb-4" id = "the_answer"></h2>
-
-<h6 class="h4 text-gray-900 mb-4" id = "the_answer_info"></h6>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-
-<form class="user" action="/login" method="post">
-
-
-                      <a href="/logout">LOGOUT</a>
-
-                  </form>
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
-<div>
-    <h1 style="color:red">
-
-    Danger Zone
-    </h1>
-    <h4>
-        Upload a new csv file to update the data. Uploading a new file will replace the current file in the system, not add to it. Please read README.txt file for more important information on file upload.
-    </h4>
-
-<form id="upload-file" method="post" enctype="multipart/form-data">
-    <fieldset>
-        <input name="file" type="file">
-    </fieldset>
-    <fieldset>
-        <button id="upload-file-btn" type="button">Upload</button>
-    </fieldset>
-</form>
-
-</div>
-
-</body></html>
+</html>
