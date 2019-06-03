@@ -215,8 +215,8 @@ def sendMail(recipient):
     msg.attach(MIMEText(body, 'plain'))
 
     # open the file to be sent
-    filename = "newRawEmail.csv"
-    attachment = open("application/newRawEmail.csv", "rb")
+    filename = "raw.csv"
+    attachment = open("raw.csv", "rb")
 
     # instance of MIMEBase and named as p
     p = MIMEBase('application', 'octet-stream')
