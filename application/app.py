@@ -1,7 +1,7 @@
 import os
-from flask import Flask, render_template, g
+from flask import Flask, render_template
 from flask import jsonify, request, session, redirect
-import warnings, csv
+import warnings, csv, smtplib
 
 
 
