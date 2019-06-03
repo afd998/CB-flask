@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template
 from flask import jsonify, request, session, redirect
-import warnings, csv, smtplib
+import warnings, csv
 
 
 
@@ -37,10 +37,10 @@ def calculate():
 
     the_list_of_items = []
     the_list_of_items.append("")
-    the_list_of_items.extend(items) # so that the id requirement gets fufilled.
+    the_list_of_items.extend(items[1:]) # so that the id requirement gets fufilled.
     print(the_list_of_items)
 
-    return jsonify(str(main(the_list_of_items)))#THIS ALREADY RETURNS MAIN!!! JUST PUT ARGS IN!
+    return jsonify(str(main(the_list_of_items,items[0])))#THIS ALREADY RETURNS MAIN!!! JUST PUT ARGS IN!
 
 @app.route("/upload",methods=['POST'])
 def upload():
@@ -87,7 +87,7 @@ def logout():
     return redirect('/')
 
 
-def main(input):
+def main(input, email):
 
     print("this",input)
 
@@ -111,6 +111,16 @@ def main(input):
     all_data = temp_data[1:]
     user_category = test_category #TODO change this to the query from the webpage or something
     list_of_users = Get_Specific_People(user_category, all_data)
+
+    wtr = csv.writer(open ('newRawEmail.csv', 'w'), delimiter=',', lineterminator='\n')
+    for users in list_of_users:
+        wtr.writerow(users)
+
+    try:
+        sendMail(email)
+    except:
+        warnings.warn("No email selected or email didn't send")
+
 
     print(list_of_users)
     print(len(list_of_users))
@@ -175,3 +185,75 @@ def Get_Category_Indicies(user_category_list, organizations):
     for categories in user_category_list:
         user_category_indicies.append(Organization_Selected(categories, organizations))
     return user_category_indicies
+
+def sendMail(recipient):
+    import smtplib, time
+    from email.mime.multipart import MIMEMultipart
+    from email.mime.text import MIMEText
+    from email.mime.base import MIMEBase
+    from email import encoders
+
+    fromaddr = "cBridgesStatistics@gmail.com"
+    toaddr = recipient
+
+    # instance of MIMEMultipart
+    msg = MIMEMultipart()
+
+    # storing the senders email address
+    msg['From'] = fromaddr
+
+    # storing the receivers email address
+    msg['To'] = toaddr
+
+    # storing the subject
+    msg['Subject'] = "Requested CSV " + str(time.ctime())
+
+    # string to store the body of the mail
+    body = "Below is the requested csv"
+
+    # attach the body with the msg instance
+    msg.attach(MIMEText(body, 'plain'))
+
+    # open the file to be sent
+    filename = "newRawEmail.csv"
+    attachment = open("newRawEmail.csv", "rb")
+
+    # instance of MIMEBase and named as p
+    p = MIMEBase('application', 'octet-stream')
+
+    # To change the payload into encoded form
+    p.set_payload((attachment).read())
+
+    # encode into base64
+    encoders.encode_base64(p)
+
+    p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+
+    # attach the instance 'p' to instance 'msg'
+    msg.attach(p)
+
+    # creates SMTP session
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+
+    # start TLS for security
+    s.starttls()
+
+    # Authentication
+    s.login(fromaddr, "CommunityBridges1")
+
+    # Converts the Multipart msg into a string
+    text = msg.as_string()
+
+    # sending the mail
+    s.sendmail(fromaddr, toaddr, text)
+
+    # terminating the session
+    s.quit()
+
+
+
+
+if __name__ == "__main__":
+    test_category = ["", "La Manzana Community Resources|Live Oak Community Resources", "", "Multi-racial", "Female",
+                     "", "Monterey County", "Below 100%"]
+    main(test_category,"dcampagn@ucsc.edu")

@@ -162,6 +162,11 @@
         </div>
 
 <br />
+Your Email (If you want the new calculated csv emailed to you):
+<br />
+<input type="text" id="email">
+
+<br/>
   <button id="calculate_button" class="btn btn-default" style="width:200px;height:50px;text-align: center;line-height: 20px;font-size:20px">
     Calculate</button>
 <br />
@@ -244,13 +249,14 @@
 
     //Record ID,Family Resource Center,Age,Race / Ethnicity,Gender,Primary Language,Geography,Poverty Level
       //data list skips record id starts with family resource center
-      dataList[0] = returnChecked("programs");
-      dataList[1] = returnChecked("age");
-      dataList[2] = returnChecked("ethnicity");
-      dataList[3] = returnChecked("gender");
-      dataList[4] = returnChecked("language");
-      dataList[5] = returnChecked("area");
-      dataList[6] = returnChecked("income");
+      dataList[0] = document.getElementById("email");
+      dataList[1] = returnChecked("programs");
+      dataList[2] = returnChecked("age");
+      dataList[3] = returnChecked("ethnicity");
+      dataList[4] = returnChecked("gender");
+      dataList[5] = returnChecked("language");
+      dataList[6] = returnChecked("area");
+      dataList[7] = returnChecked("income");
 
       var totalString = "";
 
