@@ -216,7 +216,7 @@ def sendMail(recipient):
 
     # open the file to be sent
     filename = "newRawEmail.csv"
-    attachment = open("newRawEmail.csv", "rb")
+    attachment = open("application/newRawEmail.csv", "rb")
 
     # instance of MIMEBase and named as p
     p = MIMEBase('application', 'octet-stream')
