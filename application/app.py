@@ -115,6 +115,7 @@ def main(input, email):
 
     with open('newRawEmail.csv', 'w') as outfile:
         wtr = csv.writer(outfile,delimiter=',', lineterminator='\n')
+        wtr.writerow(organizations)
         for users in list_of_users:
             wtr.writerow(users)
 
