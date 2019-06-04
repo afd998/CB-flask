@@ -112,9 +112,11 @@ def main(input, email):
     user_category = test_category #TODO change this to the query from the webpage or something
     list_of_users = Get_Specific_People(user_category, all_data)
 
-    wtr = csv.writer(open ('newRawEmail.csv', 'w'), delimiter=',', lineterminator='\n')
-    for users in list_of_users:
-        wtr.writerow(users)
+    with open('newRawEmail.csv', 'w') as outfile:
+        wtr = csv.writer(outfile,delimiter=',', lineterminator='\n')
+        for users in list_of_users:
+            wtr.writerow(users)
+
 
     try:
         sendMail(email)
@@ -254,6 +256,7 @@ def sendMail(recipient):
 
 
 if __name__ == "__main__":
-    test_category = ["", "La Manzana Community Resources|Live Oak Community Resources", "", "Multi-racial", "Female",
-                     "", "Monterey County", "Below 100%"]
+    #test_category = ["", "La Manzana Community Resources|Live Oak Community Resources", "", "Multi-racial", "Female",
+    #                 "", "Monterey County", "Below 100%"]
+    test_category = ["","","","","","","",""]
     main(test_category,"dcampagn@ucsc.edu")
