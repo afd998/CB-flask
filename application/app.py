@@ -86,6 +86,10 @@ def logout():
 #this function computes the amount of people in the specified list then emails it to the user
 def main(input, email):
 
+    for i in range(len(input)):
+        input[i] = input[i].replace(" ","").lower()#this removes spaces and caps
+
+
 
     print("this",input)
 
@@ -93,7 +97,6 @@ def main(input, email):
     #98653,La Manzana Community Resources,0-5,Multi-racial,Female,Other,Monterey County,Below 100%
     #be able to add more than one option
 
-    test_category = input
     #test_category = ["","La Manzana Community Resources|Live Oak Community Resources","","Multi-racial","Female","","Monterey County","Below 100%"]
 
     #reads in csv file then outputs data to all_data and creates categories which hold all of the categories
@@ -107,7 +110,7 @@ def main(input, email):
         organizations = temp_data[0] #FIXME need to find a way to determine which row has categories
 
     all_data = temp_data[1:]
-    user_category = test_category #TODO change this to the query from the webpage or something
+    user_category = input
     list_of_users = Get_Specific_People(user_category, all_data)
 
     with open('newRawEmail.csv', 'w') as outfile:
@@ -135,8 +138,9 @@ def Get_Specific_People(user_category, all_data):
 
 
 def Look_For_Category(index, category_name, data_array):
-    # this is crappy code to find the categories
+
     '''
+    # this is code to find the categories
     names = []
     for data in data_array:
         if data[index] not in names:
@@ -154,7 +158,7 @@ def Look_For_Category(index, category_name, data_array):
     print(category_names)
 
     for data in data_array:
-        if data[index] in category_names:
+        if data[index].replace(" ","").lower() in category_names:#this removes spaces and caps
             new_array.append(data)
 
     if new_array == []:
@@ -170,6 +174,13 @@ def Get_Category_List(user_category,all_data):
             the_list.append(data)
     return the_list
 
+
+def Get_Category_Indicies(user_category_list, organizations):
+    user_category_indicies = []
+    for categories in user_category_list:
+        user_category_indicies.append(Organization_Selected(categories, organizations))
+    return user_category_indicies
+
 def Organization_Selected(user_org, organizations):
     for i in range(len(organizations)):
         print(organizations[i].lower())
@@ -180,11 +191,7 @@ def Organization_Selected(user_org, organizations):
     #if not reached
     raise Exception("Not Valid ORG")
 
-def Get_Category_Indicies(user_category_list, organizations):
-    user_category_indicies = []
-    for categories in user_category_list:
-        user_category_indicies.append(Organization_Selected(categories, organizations))
-    return user_category_indicies
+
 
 def sendMail(recipient):
     import smtplib, time
@@ -254,7 +261,7 @@ def sendMail(recipient):
 
 #a test run if this file is run
 if __name__ == "__main__":
-    #test_category = ["", "La Manzana Community Resources|Live Oak Community Resources", "", "Multi-racial", "Female",
-    #                 "", "Monterey County", "Below 100%"]
-    test_category = ["","","","","","","",""]
+    test_category = ["", "LaManzana Community Resources|Live Oak Community Resources            ", "", "multi-racial", "Female",
+                     "", "Monterey County", "Below 100%"]
+    #test_category = ["","","","","","","",""]
     main(test_category,"")
