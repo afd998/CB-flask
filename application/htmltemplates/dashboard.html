@@ -249,7 +249,7 @@ Your Email (If you want the new calculated csv emailed to you):
 
     //Record ID,Family Resource Center,Age,Race / Ethnicity,Gender,Primary Language,Geography,Poverty Level
       //data list skips record id starts with family resource center
-      dataList[0] = document.getElementById("email");
+      dataList[0] = document.getElementById("email").value;
       dataList[1] = returnChecked("programs");
       dataList[2] = returnChecked("age");
       dataList[3] = returnChecked("ethnicity");
