@@ -1,62 +1,40 @@
-# Flask Heroku Example
-_(This repo is part of our [Free Flask Tutorial](https://flask-tutorial.com))_
+﻿# Welcome Community Bridges Statistics Website!
+Community Bridges is a non-profit based in Santa Cruz County that provides services in their programs. Their programs provide people access to transportation, healthy food, health care, and senior daycare. 
+## What is the Purpose of this Website? How will it help Community Bridges?
+The purpose of this website is to calculate statistics for individuals who are a representative of Community Bridges. These statistics will help the organization's grant providers understand which program needs more support. 
+### Steps On How To Use The Website:
+1. Put in the correct username and password authentication 
+2. Click on the checkboxes you want
+3. Press the "Calculate" button and you will see how many people benefit from the provided criteria
+4. To upload a CSV file, please look at the Danger Zone steps below 
+5. Log out of the website 
 
-This repo contains some sample code to deploy a simple (but complete) Flask application to [Heroku](https://heroku.com). The deployed app counts with the following features:
+## DANGER ZONE STEPS:
 
-* Running Python 3.6 🐍
-* Access to a Postgres Database 📘
-* Static Files management with [WhiteNoise](http://whitenoise.evans.io/en/stable/) 🔌
+Each individual person in the csv **MUST** have values from at least one of these options. 
+They **ARE** Case and Space Sensitive. 
+As you can see there are already weird exceptions such as ‘Multi-racial’ and ‘multi-racial’ which are technically the same, but because it is case sensitive the program reads them as different inputs. 
+Because of this I added an exception towards this case and another one for Santa Cruz, so it will work with the current csv. In the future when you want to update the csv, to repeat, it must use these values or else the code will need to be updated. Thank you!
 
-**There's a detailed video lesson on how to perform the deploy in our [Free Flask Tutorial](https://flask-tutorial.com).**
+If you are ever worried about the program having an error, calculate the amount of people while using no specifications,
+then calculate the amount of people with all of the check boxes marked in a certain category. If the number is the same then the program works!
 
-## Summary of steps to deploy your app
-_(Assuming you've already created an account with Heroku)_
+*['La Manzana Community Resources', 'Nueva Vista Community Resources', 'Live Oak Community Resources', 'Mountain Community Resources']*
 
-##### 1. Clone the repo
-```bash
-$ git clone https://github.com/rmotr-curriculum/flask-heroku-example.git && cd flask-heroku-example
-```
+*['0-5', '19-59', '60 and Over', '6-18', 'Unknown']*
 
-##### 2. Login to Heroku
-```bash
-$ heroku login
-```
+*['Multi-racial', 'multi-racial', 'Asian', 'American Indian or Alaska Native', 'White', 'Latino', 'Other', 'Black or African American', 'Native Hawaiian or Other Pacific Islander']*
 
-##### 3. Create your Heroku apps
-```bash
-$ heroku create
-```
+*['Female', 'Male', 'Other']*
 
-##### 4. Set the Python Path
-```bash
-$ heroku config:set PYTHONPATH=flask_heroku_example
-```
+*['Other', 'Spanish', 'English']*
 
-##### 5. Add Postgres Add-on to your Heroku app
-(Use Heroku's site to add Postgres. It's free)
+*['Monterey County', 'Watsonville', 'Santa Cruz ', 'South County', 'Santa Cruz County', 'Mid-County', 'San Benito County', 'Other', 'San Lorenzo Valley', 'Capitola', 'Scotts Valley', ‘Santa Cruz’]*
 
-##### 6. Initialize the Database
-```bash
-$ # Create the initial schema
-$ heroku pg:psql < schema.sql
-$ # Load some initial testing data
-$ heroku pg:psql < initial_data.sql
-```
+*['Below 100%', '100%-200%', '100-200%', 'Above 200%']*
 
-##### 7. Deploy & Profit
-```bash
-$ git push heroku master
-```
 
-## Running the app locally
-_(You need to have installed Postgres locally to run the app. For a simpler sqlite alternative, please check the aforementioned tutorial)_
+## Other Notes:
 
-```bash
-# Create the virtualenv
-$ mkvirtualenv flask-heroku-example
-# Install dependencies
-$ pip install -r requirements.txt
-# Run the app
-$ python flask_heroku_example/main.py
-# Now point your browser to localhost:5000
-```
+There was a previous version of this that was effectively archived (or at least should be) at https://github.com/deancampagnolo/CommunityBridges
+
