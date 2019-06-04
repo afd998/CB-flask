@@ -8,7 +8,6 @@ The purpose of this website is to calculate statistics for individuals who are a
 3. Press the "Calculate" button and you will see how many people benefit from the provided criteria
 4. To upload a CSV file, please look at the Danger Zone steps below 
 5. Log out of the website 
-
 ## DANGER ZONE STEPS:
 
 Each individual person in the csv **MUST** have values from at least one of these options. 
@@ -34,7 +33,12 @@ then calculate the amount of people with all of the check boxes marked in a cert
 *['Below 100%', '100%-200%', '100-200%', 'Above 200%']*
 
 
-## Other Notes:
+## Important Notes:
+
+When starting the heroku server (or any other server that will host this code for that matter) it will probably ignore the new values that you give the server in the csv. Just upload a new one.
 
 There was a previous version of this that was effectively archived (or at least should be) at https://github.com/deancampagnolo/CommunityBridges
+
+Email that is sending things is: cBridgesStatistics@gmail.com
+p: CommunityBridges1
 
