@@ -3,9 +3,6 @@ from flask import Flask, render_template
 from flask import jsonify, request, session, redirect
 import warnings, csv
 
-
-
-
 app = Flask(__name__, template_folder="htmltemplates")
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
@@ -86,8 +83,9 @@ def logout():
     session.pop('username', None)
     return redirect('/')
 
-
+#this function computes the amount of people in the specified list then emails it to the user
 def main(input, email):
+
 
     print("this",input)
 
@@ -254,9 +252,9 @@ def sendMail(recipient):
 
 
 
-
+#a test run if this file is run
 if __name__ == "__main__":
     #test_category = ["", "La Manzana Community Resources|Live Oak Community Resources", "", "Multi-racial", "Female",
     #                 "", "Monterey County", "Below 100%"]
     test_category = ["","","","","","","",""]
-    main(test_category,"dcampagn@ucsc.edu")
+    main(test_category,"")

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27547a9a-877e-472a-9341-ddde28539606" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/htmltemplates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/htmltemplates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/newRawEmail.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,23 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+            <state relative-caret-position="402">
+              <caret line="254" column="31" lean-forward="true" selection-start-line="254" selection-start-column="31" selection-end-line="254" selection-end-column="31" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -37,45 +29,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/raw.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50679">
-              <caret line="171" column="26" selection-start-line="171" selection-start-column="26" selection-end-line="171" selection-end-column="26" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/runtime.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/newRawEmail.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="3166" column="19" selection-start-line="3166" selection-start-column="19" selection-end-line="3166" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/htmltemplates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
-              <caret line="246" column="24" lean-forward="true" selection-start-line="246" selection-start-column="24" selection-end-line="246" selection-end-column="24" />
+            <state relative-caret-position="745">
+              <caret line="294" column="3" lean-forward="true" selection-start-line="294" selection-start-column="3" selection-end-line="294" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/test.py">
+        <entry file="file://$PROJECT_DIR$/application/htmltemplates/layout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/htmltemplates/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="425">
+                <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raw.csv">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -102,15 +111,17 @@
         <option value="$PROJECT_DIR$/application/email.py" />
         <option value="$PROJECT_DIR$/application/out.csv" />
         <option value="$PROJECT_DIR$/application/test.py" />
+        <option value="$PROJECT_DIR$/application/newRawEmail.csv" />
         <option value="$PROJECT_DIR$/application/htmltemplates/dashboard.html" />
         <option value="$PROJECT_DIR$/application/app.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="181" />
+    <option name="y" value="50" />
+    <option name="width" value="1081" />
+    <option name="height" value="966" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -261,23 +272,23 @@
       <updated>1559590489354</updated>
       <workItem from="1559590491026" duration="1164000" />
       <workItem from="1559591801028" duration="5260000" />
-      <workItem from="1559618284215" duration="2266000" />
+      <workItem from="1559618284215" duration="4384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8690000" />
+    <option name="totallyTimeSpent" value="10808000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28993437" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.141258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3129103" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30985916" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934355" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,15 +342,18 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/application/out.csv" />
-    <entry file="file://$PROJECT_DIR$/application/main.py">
+    <entry file="file://$PROJECT_DIR$/application/r.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/newRawEmail.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/application/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -350,34 +364,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/htmltemplates/dashboard.html">
+    <entry file="file://$PROJECT_DIR$/application/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="246" column="24" lean-forward="true" selection-start-line="246" selection-start-column="24" selection-end-line="246" selection-end-column="24" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/raw.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50679">
-          <caret line="171" column="26" selection-start-line="171" selection-start-column="26" selection-end-line="171" selection-end-column="26" />
+        <state relative-caret-position="204">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/newRawEmail.csv">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="425">
+            <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raw.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/htmltemplates/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/htmltemplates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="3166" column="19" selection-start-line="3166" selection-start-column="19" selection-end-line="3166" selection-end-column="19" />
+        <state relative-caret-position="391">
+          <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/htmltemplates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="294" column="3" lean-forward="true" selection-start-line="294" selection-start-column="3" selection-end-line="294" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+        <state relative-caret-position="402">
+          <caret line="254" column="31" lean-forward="true" selection-start-line="254" selection-start-column="31" selection-end-line="254" selection-end-column="31" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
