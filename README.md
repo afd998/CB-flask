@@ -32,3 +32,9 @@ then calculate the amount of people with all of the check boxes marked in a cert
 *['Monterey County', 'Watsonville', 'Santa Cruz ', 'South County', 'Santa Cruz County', 'Mid-County', 'San Benito County', 'Other', 'San Lorenzo Valley', 'Capitola', 'Scotts Valley', ‘Santa Cruz’]*
 
 *['Below 100%', '100%-200%', '100-200%', 'Above 200%']*
+
+
+## Other Notes:
+
+There was a previous version of this that was effectively archived (or at least should be) at https://github.com/deancampagnolo/CommunityBridges
+
