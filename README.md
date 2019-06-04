@@ -11,9 +11,9 @@ The purpose of this website is to calculate statistics for individuals who are a
 ## DANGER ZONE STEPS:
 
 Each individual person in the csv **MUST** have values from at least one of these options. 
-They **ARE** Case and Space Sensitive. 
 As you can see there are already weird exceptions such as ‘Multi-racial’ and ‘multi-racial’ which are technically the same, but because it is case sensitive the program reads them as different inputs. 
-Because of this I added an exception towards this case and another one for Santa Cruz, so it will work with the current csv. In the future when you want to update the csv, to repeat, it must use these values or else the code will need to be updated. Thank you!
+Because of this I added an exception towards this case and another one for Santa Cruz, so it will work with the current csv. In the future when you want to update the csv, to repeat, it must use these values or else the code will need to be updated. 
+I also added some code (near the end of making this project) that makes it so that cases and spaces are ignored, but it is really good practice to not have to rely on these fail safes. Thank you!
 
 If you are ever worried about the program having an error, calculate the amount of people while using no specifications,
 then calculate the amount of people with all of the check boxes marked in a certain category. If the number is the same then the program works!

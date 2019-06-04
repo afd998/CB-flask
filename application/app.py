@@ -100,15 +100,18 @@ def main(input, email):
     #test_category = ["","La Manzana Community Resources|Live Oak Community Resources","","Multi-racial","Female","","Monterey County","Below 100%"]
 
     #reads in csv file then outputs data to all_data and creates categories which hold all of the categories
-    with open('raw.csv') as csvfile:
+    try:
+        with open('raw.csv') as csvfile:
 
-        readCSV = csv.reader(csvfile, delimiter=',')
-        #print(readCSV)
-        temp_data = []
-        for row in readCSV:
-            temp_data.append(row)
-        organizations = temp_data[0] #FIXME need to find a way to determine which row has categories
-
+            readCSV = csv.reader(csvfile, delimiter=',')
+            #print(readCSV)
+            temp_data = []
+            for row in readCSV:
+                temp_data.append(row)
+            organizations = temp_data[0] #FIXME need to find a way to determine which row has categories
+    except:
+        print("[There is currently no raw.csv, try uploading one]")
+        return "[There is currently no raw.csv, try uploading one]"
     all_data = temp_data[1:]
     user_category = input
     list_of_users = Get_Specific_People(user_category, all_data)
